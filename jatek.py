@@ -22,9 +22,6 @@ def jatekmenet():
             hanyadik = bejart_helyszinek[-1]
             vissza = 0
 
-            if bemenet == "kilep":
-                quit("Kilépés a játékból...")
-
             while bemenet != "kilep" and jatekos.eletero > 1:
                 if kiadott_parancsok[-1] != "vissza":
                     vissza = 0
@@ -130,6 +127,9 @@ def jatekmenet():
                         print("Nincs kulcs nálad!")
                 bemenet = input("# ")
                 kiadott_parancsok.append(bemenet)
+
+                if bemenet == "kilep":
+                    quit("Kilépés a játékból...")
 
         elif indul == "kilep":
             quit("Kilépés a játékból...")
